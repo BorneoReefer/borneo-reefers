@@ -1,2 +1,8 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Overrides & variables
+$black: #000;
+$white: #fff;
 
+// Import Twitter Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Import Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
