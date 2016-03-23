@@ -1,0 +1,15 @@
+vendor
+node_modules
+public/css/
+public/images/
+public/photos/
+public/build/
+public/js/
+.sass-cache/
+*~
+.*~
+*.sw*
+.on_cd
+.on_cd_lock
+*.sql
+Dockerfile
