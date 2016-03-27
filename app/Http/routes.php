@@ -22,9 +22,124 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/', 'PageController@index');
-    Route::get('/news', 'PageController@news');
-    Route::get('/about', 'PageController@about');
-    Route::get('/faq', 'PageController@faq');
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+|
+| POST     | login                   | auth::             | App\Http\Controllers\Auth\AuthController@login                  | web,guest  |
+| GET|HEAD | login                   | auth::             | App\Http\Controllers\Auth\AuthController@showLoginForm          | web,guest  |
+| GET|HEAD | logout                  | auth::             | App\Http\Controllers\Auth\AuthController@logout                 | web        |
+| POST     | password/email          | auth::             | App\Http\Controllers\Auth\PasswordController@sendResetLinkEmail | web,guest  |
+| POST     | password/reset          | auth::             | App\Http\Controllers\Auth\PasswordController@reset              | web,guest  |
+| GET|HEAD | password/reset/{token?} | auth::             | App\Http\Controllers\Auth\PasswordController@showResetForm      | web,guest  |
+| POST     | register                | auth::             | App\Http\Controllers\Auth\AuthController@register               | web,guest  |
+| GET|HEAD | register                | auth::             | App\Http\Controllers\Auth\AuthController@showRegistrationForm   | web,guest  |
+|
+*/
+Route::group([
+    'middleware' => ['web'],
+], function () {
+    Route::auth();
+    Route::get('register', function () {
+        return abort(404);
+    });
+    Route::post('register', function () {
+        return abort(404);
+    });
+});
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| GET|HEAD | /                       | app::index         | App\Http\Controllers\PageController@index                       | web        |
+| GET|HEAD | news                    | app::news          | App\Http\Controllers\PageController@news                        | web        |
+| GET|HEAD | about                   | app::about         | App\Http\Controllers\PageController@about                       | web        |
+| GET|HEAD | faq                     | app::faq           | App\Http\Controllers\PageController@faq                         | web        |
+|
+*/
+Route::group([
+    'middleware' => ['web'],
+    'as' => 'app::'
+], function () {
+    Route::get('/', [
+        'as' => 'index',
+        'uses' => 'PageController@index'
+    ]);
+    Route::get('/news', [
+        'as' => 'news',
+        'uses' => 'PageController@news'
+    ]);
+    Route::get('/about', [
+        'as' => 'about',
+        'uses' => 'PageController@about'
+    ]);
+    Route::get('/faq', [
+        'as' => 'faq',
+        'uses' => 'PageController@faq'
+    ]);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Management Routes
+|--------------------------------------------------------------------------
+|
+| GET|HEAD | management/news         | admin::news.index  | App\Http\Controllers\Management\NewsController@index            | web,auth   |
+| GET|HEAD | management/news/create  | admin::news.create | App\Http\Controllers\Management\NewsController@create           | web,auth   |
+| GET|HEAD | management/news/edit    | admin::news.edit   | App\Http\Controllers\Management\NewsController@edit             | web,auth   |
+| GET|HEAD | management/data         | admin::data.index  | App\Http\Controllers\Management\DataController@index            | web,auth   |
+| GET|HEAD | management/data/create  | admin::data.create | App\Http\Controllers\Management\DataController@create           | web,auth   |
+| GET|HEAD | management/data/edit    | admin::data.edit   | App\Http\Controllers\Management\DataController@edit             | web,auth   |
+| GET|HEAD | management/faq          | admin::faq.index   | App\Http\Controllers\Management\FAQController@index             | web,auth   |
+| GET|HEAD | management/faq/create   | admin::faq.create  | App\Http\Controllers\Management\FAQController@create            | web,auth   |
+| GET|HEAD | management/faq/edit     | admin::faq.edit    | App\Http\Controllers\Management\FAQController@edit              | web,auth   |
+|
+*/
+Route::group([
+    'middleware' => ['web', 'auth'],
+    'as' => 'admin::',
+    'prefix' => 'management',
+    'namespace' => 'Management',
+], function () {
+    Route::get('/news', [
+        'as' => 'news.index',
+        'uses' => 'NewsController@index'
+    ]);
+    Route::get('/news/create', [
+        'as' => 'news.create',
+        'uses' => 'NewsController@create'
+    ]);
+    Route::get('/news/edit', [
+        'as' => 'news.edit',
+        'uses' => 'NewsController@edit'
+    ]);
+
+    Route::get('/faq', [
+        'as' => 'faq.index',
+        'uses' => 'FAQController@index'
+    ]);
+    Route::get('/faq/create', [
+        'as' => 'faq.create',
+        'uses' => 'FAQController@create'
+    ]);
+    Route::get('/faq/edit', [
+        'as' => 'faq.edit',
+        'uses' => 'FAQController@edit'
+    ]);
+
+    Route::get('/data', [
+        'as' => 'data.index',
+        'uses' => 'DataController@index'
+    ]);
+    Route::get('/data/create', [
+        'as' => 'data.create',
+        'uses' => 'DataController@create'
+    ]);
+    Route::get('/data/edit', [
+        'as' => 'data.edit',
+        'uses' => 'DataController@edit'
+    ]);
 });
