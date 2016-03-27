@@ -9,3 +9,4 @@ Homestead.json
 .env
 *~
 *.sw*
+*.on_cd*
