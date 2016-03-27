@@ -27,14 +27,14 @@
 | Authentication Routes
 |--------------------------------------------------------------------------
 |
-| POST     | login                   | auth::             | App\Http\Controllers\Auth\AuthController@login                  | web,guest  |
-| GET|HEAD | login                   | auth::             | App\Http\Controllers\Auth\AuthController@showLoginForm          | web,guest  |
-| GET|HEAD | logout                  | auth::             | App\Http\Controllers\Auth\AuthController@logout                 | web        |
-| POST     | password/email          | auth::             | App\Http\Controllers\Auth\PasswordController@sendResetLinkEmail | web,guest  |
-| POST     | password/reset          | auth::             | App\Http\Controllers\Auth\PasswordController@reset              | web,guest  |
-| GET|HEAD | password/reset/{token?} | auth::             | App\Http\Controllers\Auth\PasswordController@showResetForm      | web,guest  |
-| POST     | register                | auth::             | App\Http\Controllers\Auth\AuthController@register               | web,guest  |
-| GET|HEAD | register                | auth::             | App\Http\Controllers\Auth\AuthController@showRegistrationForm   | web,guest  |
+| POST      | login                   | auth::             | App\Http\Controllers\Auth\AuthController@login                  | web,guest  |
+| GET|HEAD  | login                   | auth::             | App\Http\Controllers\Auth\AuthController@showLoginForm          | web,guest  |
+| GET|HEAD  | logout                  | auth::             | App\Http\Controllers\Auth\AuthController@logout                 | web        |
+| POST      | password/email          | auth::             | App\Http\Controllers\Auth\PasswordController@sendResetLinkEmail | web,guest  |
+| POST      | password/reset          | auth::             | App\Http\Controllers\Auth\PasswordController@reset              | web,guest  |
+| GET|HEAD  | password/reset/{token?} | auth::             | App\Http\Controllers\Auth\PasswordController@showResetForm      | web,guest  |
+| POST      | register                | auth::             | App\Http\Controllers\Auth\AuthController@register               | web,guest  |
+| GET|HEAD  | register                | auth::             | App\Http\Controllers\Auth\AuthController@showRegistrationForm   | web,guest  |
 |
 */
 Route::group([
@@ -54,10 +54,10 @@ Route::group([
 | Application Routes
 |--------------------------------------------------------------------------
 |
-| GET|HEAD | /                       | app::index         | App\Http\Controllers\PageController@index                       | web        |
-| GET|HEAD | news                    | app::news          | App\Http\Controllers\PageController@news                        | web        |
-| GET|HEAD | about                   | app::about         | App\Http\Controllers\PageController@about                       | web        |
-| GET|HEAD | faq                     | app::faq           | App\Http\Controllers\PageController@faq                         | web        |
+| GET|HEAD  | /                       | app::index         | App\Http\Controllers\PageController@index                       | web        |
+| GET|HEAD  | news                    | app::news          | App\Http\Controllers\PageController@news                        | web        |
+| GET|HEAD  | about                   | app::about         | App\Http\Controllers\PageController@about                       | web        |
+| GET|HEAD  | faq                     | app::faq           | App\Http\Controllers\PageController@faq                         | web        |
 |
 */
 Route::group([
@@ -87,15 +87,15 @@ Route::group([
 | Management Routes
 |--------------------------------------------------------------------------
 |
-| GET|HEAD | management/news         | admin::news.index  | App\Http\Controllers\Management\NewsController@index            | web,auth   |
-| GET|HEAD | management/news/create  | admin::news.create | App\Http\Controllers\Management\NewsController@create           | web,auth   |
-| GET|HEAD | management/news/edit    | admin::news.edit   | App\Http\Controllers\Management\NewsController@edit             | web,auth   |
-| GET|HEAD | management/data         | admin::data.index  | App\Http\Controllers\Management\DataController@index            | web,auth   |
-| GET|HEAD | management/data/create  | admin::data.create | App\Http\Controllers\Management\DataController@create           | web,auth   |
-| GET|HEAD | management/data/edit    | admin::data.edit   | App\Http\Controllers\Management\DataController@edit             | web,auth   |
-| GET|HEAD | management/faq          | admin::faq.index   | App\Http\Controllers\Management\FAQController@index             | web,auth   |
-| GET|HEAD | management/faq/create   | admin::faq.create  | App\Http\Controllers\Management\FAQController@create            | web,auth   |
-| GET|HEAD | management/faq/edit     | admin::faq.edit    | App\Http\Controllers\Management\FAQController@edit              | web,auth   |
+| GET|HEAD  | management/news         | admin::news.index  | App\Http\Controllers\Management\NewsController@index            | web,auth   |
+| GET|HEAD  | management/news/create  | admin::news.create | App\Http\Controllers\Management\NewsController@create           | web,auth   |
+| GET|HEAD  | management/news/edit    | admin::news.edit   | App\Http\Controllers\Management\NewsController@edit             | web,auth   |
+| GET|HEAD  | management/data         | admin::data.index  | App\Http\Controllers\Management\DataController@index            | web,auth   |
+| GET|HEAD  | management/data/create  | admin::data.create | App\Http\Controllers\Management\DataController@create           | web,auth   |
+| GET|HEAD  | management/data/edit    | admin::data.edit   | App\Http\Controllers\Management\DataController@edit             | web,auth   |
+| GET|HEAD  | management/faq          | admin::faq.index   | App\Http\Controllers\Management\FAQController@index             | web,auth   |
+| GET|HEAD  | management/faq/create   | admin::faq.create  | App\Http\Controllers\Management\FAQController@create            | web,auth   |
+| GET|HEAD  | management/faq/edit     | admin::faq.edit    | App\Http\Controllers\Management\FAQController@edit              | web,auth   |
 |
 */
 Route::group([
@@ -117,6 +117,19 @@ Route::group([
         'uses' => 'NewsController@edit'
     ]);
 
+    Route::get('/data', [
+        'as' => 'data.index',
+        'uses' => 'DataController@index'
+    ]);
+    Route::get('/data/create', [
+        'as' => 'data.create',
+        'uses' => 'DataController@create'
+    ]);
+    Route::get('/data/edit', [
+        'as' => 'data.edit',
+        'uses' => 'DataController@edit'
+    ]);
+
     Route::get('/faq', [
         'as' => 'faq.index',
         'uses' => 'FAQController@index'
@@ -129,17 +142,67 @@ Route::group([
         'as' => 'faq.edit',
         'uses' => 'FAQController@edit'
     ]);
+});
 
-    Route::get('/data', [
-        'as' => 'data.index',
-        'uses' => 'DataController@index'
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| GET|HEAD  | api/news                | api::news.index    | App\Http\Controllers\API\NewsController@index                   | web,auth   |
+| POST      | api/news                | api::news.store    | App\Http\Controllers\API\NewsController@store                   | web,auth   |
+| DELETE    | api/news/{news}         | api::news.destroy  | App\Http\Controllers\API\NewsController@destroy                 | web,auth   |
+| PUT|PATCH | api/news/{news}         | api::news.update   | App\Http\Controllers\API\NewsController@update                  | web,auth   |
+| GET|HEAD  | api/news/{news}         | api::news.show     | App\Http\Controllers\API\NewsController@show                    | web,auth   |
+| GET|HEAD  | api/data                | api::data.index    | App\Http\Controllers\API\DataController@index                   | web,auth   |
+| POST      | api/data                | api::data.store    | App\Http\Controllers\API\DataController@store                   | web,auth   |
+| GET|HEAD  | api/data/{data}         | api::data.show     | App\Http\Controllers\API\DataController@show                    | web,auth   |
+| DELETE    | api/data/{data}         | api::data.destroy  | App\Http\Controllers\API\DataController@destroy                 | web,auth   |
+| PUT|PATCH | api/data/{data}         | api::data.update   | App\Http\Controllers\API\DataController@update                  | web,auth   |
+| POST      | api/faq                 | api::faq.store     | App\Http\Controllers\API\FAQController@store                    | web,auth   |
+| GET|HEAD  | api/faq                 | api::faq.index     | App\Http\Controllers\API\FAQController@index                    | web,auth   |
+| DELETE    | api/faq/{faq}           | api::faq.destroy   | App\Http\Controllers\API\FAQController@destroy                  | web,auth   |
+| GET|HEAD  | api/faq/{faq}           | api::faq.show      | App\Http\Controllers\API\FAQController@show                     | web,auth   |
+| PUT|PATCH | api/faq/{faq}           | api::faq.update    | App\Http\Controllers\API\FAQController@update                   | web,auth   |
+|
+*/
+Route::group([
+    'middleware' => ['web', 'auth'],
+    'as' => 'api::',
+    'prefix' => 'api',
+    'namespace' => 'API',
+], function () {
+    Route::resource('news', 'NewsController', [
+        'only' => ['index', 'store', 'show', 'update', 'destroy'],
+        'names' => [
+            'index' => 'news.index',
+            'store' => 'news.store',
+            'show' => 'news.show',
+            'update' => 'news.update',
+            'destroy' => 'news.destroy'
+        ]
     ]);
-    Route::get('/data/create', [
-        'as' => 'data.create',
-        'uses' => 'DataController@create'
+
+    Route::resource('data', 'DataController', [
+        'only' => ['index', 'store', 'show', 'update', 'destroy'],
+        'names' => [
+            'index' => 'data.index',
+            'store' => 'data.store',
+            'show' => 'data.show',
+            'update' => 'data.update',
+            'destroy' => 'data.destroy'
+        ]
     ]);
-    Route::get('/data/edit', [
-        'as' => 'data.edit',
-        'uses' => 'DataController@edit'
+
+    Route::resource('faq', 'FAQController', [
+        'only' => ['index', 'store', 'show', 'update', 'destroy'],
+        'names' => [
+            'index' => 'faq.index',
+            'store' => 'faq.store',
+            'show' => 'faq.show',
+            'update' => 'faq.update',
+            'destroy' => 'faq.destroy'
+        ]
     ]);
 });
