@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+require('laravel-elixir-livereload');
 
 /*
  |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ elixir(function(mix) {
     ], 'public/js/app.js');
     mix.copy(paths.bootstrap + 'fonts/**', 'public/fonts');
     mix.copy(paths.fontawesome + 'fonts/**', 'public/fonts');
+    mix.livereload();
 });
