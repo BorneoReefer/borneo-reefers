@@ -2,6 +2,17 @@
 $black: #000;
 $white: #fff;
 
+$apple-green: #d8e14a;
+$apple-red: #e24b2e;
+$orange-orange: #fea611;
+$banana-yellow: #f2e715;
+
+$inset-default: -4px;
+$inset-hover: -10px;
+
+$navbar-default-bg: rgba(255, 255, 255, 0);
+$navbar-inverse-bg: rgba(255, 255, 255, 1);
+
 // Import Twitter Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 // Import Font Awesome
@@ -9,4 +20,89 @@ $white: #fff;
 
 .navbar-text {
     padding-right: 30px;
+}
+
+.navbar-highlight {
+    opacity: 50;
+    top: -170px;
+}
+
+.banner-filler {
+    height: 170px;
+    background-size: cover;
+}
+
+.navbar-toggle {
+    border: 0;
+    background-color: $white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: $black;
+    text-transform: lowercase;
+    font-size: 18px;
+    font-family: Impact, Charcoal, sans-serif;
+    &:hover {
+        color: #110b0b;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+}
+
+.navtext-0 {
+    box-shadow: inset 0 $inset-default 0 $apple-green;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $apple-green;
+    }
+}
+
+.navtext-1 {
+    box-shadow: inset 0 $inset-default 0 $apple-red;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $apple-red;
+    }
+}
+
+.navtext-2 {
+    box-shadow: inset 0 $inset-default 0 $orange-orange;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $orange-orange;
+    }
+}
+
+.navtext-3 {
+    box-shadow: inset 0 $inset-default 0 $banana-yellow;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $banana-yellow;
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .navbar-highlight {
+        opacity: 50;
+        top: -50px;
+    }
+    .banner-filler {
+        height: 200px;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .navbar-highlight {
+        opacity: 50;
+        top: -50px;
+    }
+    .banner-filler {
+        height: 225px;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .navbar-highlight {
+        opacity: 50;
+        top: -50px;
+    }
+    .banner-filler {
+        height: 250px;
+    }
 }

@@ -1,31 +1,25 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <a class="navbar-brand" href="{{ URL::to('/') }}">
-        <img class="navbar-logo" src="{{ asset('images/logo.png') }}"/>
-    </a>
-    <div class="navbar-right navbar-text pull-right" data-toggle="dropdown" data-target=".navbar-dropdown">
-        <span class="fa fa-bars"></span>
-    </div>         
-    <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li><a href="{{ URL::to('/') }}">Borneo Reefer</a></li>
+<nav class="navbar navbar-default navbar-highlight">
+<div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="navtext-0" href="{{ route('app::index') }}">
+                Home
+            </a></li>
+            <li><a class="navtext-1" href="{{ route('app::news') }}">
+                News
+            </a></li>
+            <li><a class="navtext-2" href="{{ route('app::about') }}">
+                About Us
+            </a></li>
+            <li><a class="navtext-3" href="{{ route('app::faq') }}">
+                FAQ
+            </a></li>
         </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown navbar-dropdown">
-            <ul class="dropdown-menu">
-                <li><a href="{{ URL::to('/') }}">
-                    Home
-                </a></li>
-                <li><a href="{{ URL::to('/news') }}">
-                    News
-                </a></li>
-                <li><a href="{{ URL::to('/about') }}">
-                    About Us
-                </a></li>
-                <li><a href="{{ URL::to('/faq') }}">
-                    FAQ
-                </a></li>
-            </ul>
-        </li>
-    </ul>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <i class="fa fa-bars fa-fw"></i>
+        </button>
+    </div>
+</div>
 </nav>
