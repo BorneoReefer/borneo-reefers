@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
     @yield('head_extra')
+    @if(Auth::check())
+        <meta name="_token" content="{{ csrf_token() }}" />
+    @endif
 </head>
 <body background="{{ asset('images/background.jpg') }}" style="height:100%;">
     <div class="wrapper">
