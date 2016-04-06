@@ -16,7 +16,7 @@
         <div class="banner-filler" style="background-image: url('{{ asset('images/banner.jpg') }}');"></div>
         <!--Index navigation bar-->
         @include('templates.navbar')
-        <div style="padding-top: 80px; padding-bottom: 80px;">
+        <div style="content">
             @yield('content')
         </div>
         <!--Default footer-->
