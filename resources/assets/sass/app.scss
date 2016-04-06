@@ -38,12 +38,12 @@ $navbar-inverse-bg: rgba(255, 255, 255, 1);
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: $black;
+    color: $white;
     text-transform: lowercase;
     font-size: 18px;
     font-family: Impact, Charcoal, sans-serif;
     &:hover {
-        color: #110b0b;
+        color: darken($white, 5%);
         font-size: 20px;
         text-transform: uppercase;
     }
