@@ -16,13 +16,13 @@
         <div class="banner-filler" style="background-image: url('{{ asset('images/banner.jpg') }}');"></div>
         <!--Index navigation bar-->
         @include('templates.navbar')
-        <div style="content">
+        <div class="content">
             @yield('content')
         </div>
         <!--Default footer-->
         @include('templates.footer')
-        @yield('script_extra')
     </div>
     <script src="{{ asset('js/app.js') }}" ></script>
+    @yield('script_extra')
 </body>
 </html>

@@ -38,13 +38,17 @@ body {
     background-color: #81D4FA;
 }
 
+.content {
+    padding-bottom: 100px;
+}
+
 .navbar-text {
     padding-right: 30px;
 }
 
 .navbar-highlight {
     opacity: 100;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     top: -170px;
     box-shadow: 0 0 0 0;
 }
@@ -56,6 +60,7 @@ body {
 
 .navbar-toggle {
     border: 0;
+    z-index: 10;
     background-color: $white;
 }
 
@@ -99,10 +104,6 @@ body {
     }
 }
 
-.content {
-    top: -60px;
-}
-
 .index-right {
     position: absolute;
     right: 0px;
@@ -128,10 +129,26 @@ body {
     }
 }
 
+.container-index {
+    padding-top: 80px;
+}
+
 .index-content {
     padding: 15px 15px;
     &-text {
         font-size: 18px;
+    }
+}
+
+.index-parallax {
+    &-container {
+        margin-top: 500px;
+        max-height: 300px;
+        overflow: hidden;
+    }
+    &-image {
+        position: relative;
+        top: -400px;
     }
 }
 
