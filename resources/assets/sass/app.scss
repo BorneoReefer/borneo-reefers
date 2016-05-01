@@ -35,11 +35,14 @@ body {
 
 .content {
     position: relative;
-    top: -71px;
+    //top: -71px;
 }
 
-.navbar-text {
-    padding-right: 30px;
+.navbar {
+    margin-bottom: 0px;
+    &-text {
+        padding-right: 30px;
+    }
 }
 
 .navbar-highlight {
