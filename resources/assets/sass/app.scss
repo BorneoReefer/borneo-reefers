@@ -33,7 +33,7 @@ $font-size-base: 16px;
 $page-header-border-color: $black;
 
 $btn-default-color: $black;
-$btn-default-bg: rgba(0, 0, 0, 0);
+$btn-default-bg: rgba(255, 255, 255, 0.4);
 $btn-default-border: $black;
 
 // Import Twitter Bootstrap
@@ -44,7 +44,7 @@ $btn-default-border: $black;
 body {
     background-color: #B2EBF2;
     font-family: 'Kanit', sans-serif;
-    color: $black;
+    color: #212121;
 }
 
 .index {
@@ -123,6 +123,10 @@ body {
     }
 }
 
+.row-page {
+    @extend .row;
+}
+
 @media (min-width: $screen-sm-min) {
     .navbar-default .navbar-nav > li > a {
         color: $white;
@@ -149,11 +153,10 @@ body {
     }
     .index-logo {
         position: fixed;
-        top: 0px;
+        top: 50px;
         right: 0px;
-        width: 15vw;
+        width: 20vw;
         height: 100%;
-        background-color: $white;
         overflow: hidden;
         padding: 20px 0px 80px 0px;
         &-inner {
@@ -168,6 +171,9 @@ body {
             height: 5vh;
         }
     }
+    .row-page {
+        padding-bottom: 60vh;
+    }
 }
 
 @media (min-width: $screen-md-min) {
@@ -176,6 +182,10 @@ body {
     }
     .banner-index {
         height: $banner-index-collapse;
+    }
+    .index-logo {
+        top: 0px;
+        width: 15vw;
     }
 }
 
@@ -205,7 +215,10 @@ body {
     background-size: cover;
 }
 
-.row-page {
-    @extend .row;
-    padding-bottom: 60vh;
+.carousel-inner .item {
+    font-size: 24px;
+}
+
+.navbar-fixed-bottom {
+    margin-top: 80px;
 }

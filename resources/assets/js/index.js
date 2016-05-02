@@ -1,4 +1,4 @@
-if ($(window).width() > 480) {
+if ($(window).width() > 768) {
     $('div#myNavbar.collapse.navbar-collapse').hover(
         function() {
             $('.banner-index').css('height', '50px')
