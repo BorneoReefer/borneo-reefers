@@ -18,11 +18,23 @@ $banner-sm: 200px;
 $banner-md: 225px;
 $banner-lg: 250px;
 
+
+$banner-index-sm: 50px;
+$banner-index-collapse: 5px;
+
 $brand-primary: #0D47A1;
 $brand-success: #FF3D00;
 $brand-info: #448AFF;
 $brand-warning: $white;
 $brand-danger: $white;
+
+$font-size-base: 16px;
+
+$page-header-border-color: $black;
+
+$btn-default-color: $black;
+$btn-default-bg: rgba(0, 0, 0, 0);
+$btn-default-border: $black;
 
 // Import Twitter Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -31,9 +43,17 @@ $brand-danger: $white;
 
 body {
     background-color: #B2EBF2;
+    font-family: 'Kanit', sans-serif;
+    color: $black;
+}
+
+.index {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 .navbar {
+    z-index: 5;
     margin-bottom: 0px;
     &-text {
         padding-right: 30px;
@@ -51,6 +71,11 @@ body {
 .banner-filler {
     height: $banner-xs;
     background-size: cover;
+}
+
+.banner-index {
+    @extend .banner-filler;
+    background-color: #455A64;
 }
 
 .navbar-toggle {
@@ -119,11 +144,38 @@ body {
     .banner-filler {
         height: $banner-sm;
     }
+    .banner-index {
+        height: $banner-index-sm;
+    }
+    .index-logo {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 15vw;
+        height: 100%;
+        background-color: $white;
+        overflow: hidden;
+        padding: 20px 0px 80px 0px;
+        &-inner {
+            overflow-y: scroll;
+            height: 100%;
+        }
+
+    }
+    .space {
+        height: 65vh;
+        &-header {
+            height: 5vh;
+        }
+    }
 }
 
 @media (min-width: $screen-md-min) {
     .banner-filler {
         height: $banner-md;
+    }
+    .banner-index {
+        height: $banner-index-collapse;
     }
 }
 
@@ -131,30 +183,29 @@ body {
     .banner-filler {
         height: $banner-lg;
     }
+    .banner-index {
+        height: $banner-index-collapse;
+    }
 }
 
-.index {
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+.page-header {
+    border-bottom: 2px solid $page-header-border-color;
 }
 
-.navbar-index {
+.well {
+    border: 1px solid $black;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-.banner-index {
-    height: $banner-xs;
+.panel
+{
+    color: $black;
+    border: 0;
+    box-shadow: 2px 2px 2px #A1A1A1;
     background-size: cover;
-    background-color: #455A64;
 }
 
-@media (min-width: $screen-sm-min) {
-    .banner-index {
-        height: 50px;
-    }
-}
-
-@media (min-width: $screen-md-min) {
-    .banner-index {
-        height: 5px;
-    }
+.row-page {
+    @extend .row;
+    padding-bottom: 60vh;
 }
