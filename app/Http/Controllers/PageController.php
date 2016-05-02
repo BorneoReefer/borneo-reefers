@@ -10,7 +10,11 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('index', [
+            'background' => 'images/index.jpg',
+            'navbar' => 'navbar-index',
+            'banner' => 'banner-index'
+        ]);
     }
 
     public function news()

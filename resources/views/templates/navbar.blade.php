@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-highlight">
+<nav class="navbar navbar-default navbar-highlight {{ $navbar or "" }}">
 <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">

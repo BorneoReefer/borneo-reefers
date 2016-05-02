@@ -13,7 +13,7 @@ $inset-hover: -10px;
 $navbar-default-bg: rgba(255, 255, 255, 0);
 $navbar-inverse-bg: rgba(255, 255, 255, 1);
 
-$banner-xs: 170px;
+$banner-xs: 0px;
 $banner-sm: 200px;
 $banner-md: 225px;
 $banner-lg: 250px;
@@ -33,11 +33,6 @@ body {
     background-color: #B2EBF2;
 }
 
-.content {
-    position: relative;
-    //top: -71px;
-}
-
 .navbar {
     margin-bottom: 0px;
     &-text {
@@ -47,9 +42,10 @@ body {
 
 .navbar-highlight {
     opacity: 100;
-    background-color: rgba(255, 255, 255, 0.4);
-    top: -170px;
     box-shadow: 0 0 0 0;
+    &:focus {
+        background-color: #00ACC1;
+    }
 }
 
 .banner-filler {
@@ -64,12 +60,11 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: $white;
+    color: $black;
     text-transform: lowercase;
     font-size: 18px;
     font-family: Impact, Charcoal, sans-serif;
     &:hover {
-        color: darken($white, 5%);
         font-size: 20px;
         text-transform: uppercase;
     }
@@ -104,6 +99,17 @@ body {
 }
 
 @media (min-width: $screen-sm-min) {
+    .navbar-default .navbar-nav > li > a {
+        color: $white;
+        text-transform: lowercase;
+        font-size: 18px;
+        font-family: Impact, Charcoal, sans-serif;
+        &:hover {
+            color: darken($white, 5%);
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    }
     .navbar-highlight {
         opacity: 100;
         background-color: rgba(0, 0, 0, 0);
@@ -129,4 +135,26 @@ body {
 
 .index {
     background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.navbar-index {
+}
+
+.banner-index {
+    height: $banner-xs;
+    background-size: cover;
+    background-color: #455A64;
+}
+
+@media (min-width: $screen-sm-min) {
+    .banner-index {
+        height: 50px;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .banner-index {
+        height: 5px;
+    }
 }

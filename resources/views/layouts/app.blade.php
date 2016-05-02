@@ -11,9 +11,17 @@
         <meta name="_token" content="{{ csrf_token() }}" />
     @endif
 </head>
-<body background="{{ asset('images/background.jpg') }}" style="height:100%;">
+@if(isset($background))
+    <body class="index" style="background: url({{ asset($background) }}) no-repeat center center fixed;">
+@else
+    <body>
+@endif
     <div class="wrapper">
+    @if(isset($banner))
+        <div class="{{ $banner }}"></div>
+    @else
         <div class="banner-filler" style="background-image: url('{{ asset('images/banner.jpg') }}');"></div>
+    @endif
         <!--Index navigation bar-->
         @include('templates.navbar')
         <div class="content">

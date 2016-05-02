@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid index" style="background: url({{ asset('images/index.jpg') }});">
+<div class="container-fluid index">
     <div class="index-logo">
-        <img src="{{ asset('images/logo.png') }}" />
+        <img class="col-xs-12" src="{{ asset('images/logo.png') }}" />
     </div>
 </div>
 @stop
