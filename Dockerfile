@@ -2,6 +2,12 @@ FROM fedora:23
 
 MAINTAINER "Timur Kiyivinski" <deathseclipse@gmail.com>
 
+# Expose PHP ports
+EXPOSE 80 443
+
+# Image volumes
+VOLUME ["/etc/ssl", "/var/www/html/laravel/public/images", "/var/www/html/laravel/public/photos"]
+
 # Basic Laravel Requirements
 RUN dnf install -y  \
         nginx       \
@@ -15,17 +21,11 @@ RUN dnf install -y  \
         npm         \
         git
 
-RUN npm install -g -y gulp
-
-# Expose PHP ports
-EXPOSE 80 443
-
-# Image volumes
-VOLUME ["/etc/ssl", "/var/www/html/laravel/public/images", "/var/www/html/laravel/public/photos"]
-
 # Nginx & PHP configuration
-COPY etc /etc/
 RUN sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php.ini
+COPY etc /etc/
+
+RUN npm install -g -y gulp
 
 # SUKMA-Core application
 RUN mkdir -p /var/www/html/laravel
