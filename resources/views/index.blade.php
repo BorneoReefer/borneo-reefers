@@ -5,10 +5,10 @@
     <div class="index-logo">
         <div class="index-logo-inner panel-body">
             <img class="col-xs-12" src="{{ asset('images/logo.png') }}" />
-            <div class="page-header">
+            <div class="page-header hidden-xs text-white">
                 <h3>Discover</h3>
             </div>
-            <div class="text-center">
+            <div class="text-center hidden-xs">
                 <h3><a href="#main" class="btn btn-default">Borneo Reefer</a></h3>
                 <h3><a href="#services" class="btn btn-default">Our Services</a></h3>
                 <h3><a href="#values" class="btn btn-default">Our Values</a></h3>
@@ -18,7 +18,8 @@
             </div>
         </div>
     </div>
-    <div class="row-page">
+    <div class="index-page"></div>
+    <div id="index-row-0" class="row-page">
         <div class="col-xs-12 col-sm-8">
             <div class="page-header" id="main">
                 <h1>We're Borneo Reefer</h1>
@@ -27,8 +28,20 @@
                 <h3>A Container Refrigeration Company</h3>
                 <h3>Based in Kuching</h3>
                 <h3>
-                    <a class="btn btn-default" role="button" data-toggle="collapse" href="#services" aria-expanded="true" aria-controls="collapseServices">Our Services</a>
-                    <a class="btn btn-default" role="button" data-toggle="collapse" href="#service" aria-expanded="false" aria-controls="collapseService">Service List</a>
+                    <a class="btn btn-default hidden-xs" role="button" data-toggle="collapse" href="#services" aria-expanded="true" aria-controls="collapseServices">Our Services</a>
+                    <a class="btn btn-default hidden-xs" role="button" data-toggle="collapse" href="#service" aria-expanded="false" aria-controls="collapseService">Service List</a>
+                    <div class="visible-xs">
+                        <a class="btn btn-default" href="#find"><span class="fa fa-phone"></span></a>
+                        <a class="btn btn-default" role="button" data-toggle="collapse" href="#index-row-1" aria-expanded="false" aria-controls="collapseValues">
+                            <span class="fa fa-heart"></span>
+                        </a>
+                        <a class="btn btn-default" role="button" data-toggle="collapse" href="#index-row-2" aria-expanded="false" aria-controls="collapseMission">
+                            <span class="fa fa-lightbulb-o"></span>
+                        </a>
+                        <a class="btn btn-default" role="button" data-toggle="collapse" href="#index-row-3" aria-expanded="false" aria-controls="collapseHistory">
+                            <span class="fa fa-history"></span>
+                        </a>
+                    </div>
                 </h3>
             </div>
             <div class="collapse in" id="services">
@@ -73,25 +86,27 @@
             </div>
         </div>
     </div>
-    <div class="row-page">
+    <div id="index-row-1" class="row-page collapse">
         <div class="col-xs-12 col-sm-8">
             <div class="page-header">
                 <div class="space-header" id="values"></div>
                 <h1>Our Values</h1>
             </div>
             <div class="well text-left">
-                <ul>
-                    <li><h4>Team Work</h4></li>
-                    <li><h4>Customer Focus</h4></li>
-                    <li><h4>Quality & Professionalism</h4></li>
-                    <li><h4>Open Communication</h4></li>
-                    <li><h4>Continuous Improvement & Innovation</h4></li>
-                    <li><h4>Ethical Business Practice</h4></li>
-                </ul>
+                <div id="carousel-values" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">Team Work</div>
+                        <div class="item">Customer Focus</div>
+                        <div class="item">Quality & Professionalism</div>
+                        <div class="item">Open Communication</div>
+                        <div class="item">Continuous Improvement & Innovation</div>
+                        <div class="item">Ethical Business Practice</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row-page">
+    <div id="index-row-2" class="row-page collapse">
         <div class="col-xs-12 col-sm-8">
             <div class="page-header">
                 <div class="space-header" id="mission"></div>
@@ -105,7 +120,7 @@
             </div>
         </div>
     </div>
-    <div class="row-page">
+    <div id="index-row-3" class="row-page collapse">
         <div class="col-xs-12 col-sm-8">
             <div class="page-header">
                 <div class="space-header" id="history"></div>
@@ -113,12 +128,12 @@
             </div>
             <div class="well text-left">
                 <p>Mr. Maniam, The Managing Director, started his career at MCS Container Sdn. Bhd. in the year 1991. In the year 2000, Mr. Maniam went into business with his two younger brothers by forming Passage Back-Up Sdn. Bhd in Port Klang with the main idea of exploring the world of containerization. Passage Back-Up was the first company of its kind to do major reefer container structural repair while focusing on a total reefer service concept.  </p>
- 	            <p>In due time, Passage Back-Up Sdn. Bhd was able to proudly include shipping industry giants like Hapag-Lyod, NYK, PIL, PDZ and P&O into its clientele. Borneo Reefer Sdn. Bhd was set up in 2003 to pave way to the birth of a localised Total Reefer Care Service industry in Kuching, Sarawak. Since its inception, Borneo Reefer has tirelessly worked to help Shipping Liners and their local agents to reduce the number of freight claims by assuring that every single Reefer unit is in optimum working condition before it is despatched for the consignee’s premises for loading.</p>
-	            <p>In 2013, Borneo Reefer was given the opportunity by Senari Machinery Sdn. Bhd to provide Pre-Trip Inspection (PTI) services for a selected group of clients at Senari Port’s On-Dock Depot (ODD) facility. </p>
+                <p>In due time, Passage Back-Up Sdn. Bhd was able to proudly include shipping industry giants like Hapag-Lyod, NYK, PIL, PDZ and P&O into its clientele. Borneo Reefer Sdn. Bhd was set up in 2003 to pave way to the birth of a localised Total Reefer Care Service industry in Kuching, Sarawak. Since its inception, Borneo Reefer has tirelessly worked to help Shipping Liners and their local agents to reduce the number of freight claims by assuring that every single Reefer unit is in optimum working condition before it is despatched for the consignee’s premises for loading.</p>
+                <p>In 2013, Borneo Reefer was given the opportunity by Senari Machinery Sdn. Bhd to provide Pre-Trip Inspection (PTI) services for a selected group of clients at Senari Port’s On-Dock Depot (ODD) facility. </p>
             </div>
         </div>
     </div>
-    <div class="row-page">
+    <div id="index-row-4" class="row-page">
         <div class="col-xs-12 col-sm-8">
             <div class="page-header">
                 <div class="space-header" id="find"></div>
@@ -128,7 +143,9 @@
                 <h3>
                     <a class="btn btn-default" role="button" data-toggle="collapse" href="#contact" aria-expanded="true" aria-controls="collapseContact">Contact</a>
                     <a class="btn btn-default" role="button" data-toggle="collapse" href="#address" aria-expanded="false" aria-controls="collapseAddress">Address</a>
-                    <a class="btn btn-default" role="button" data-toggle="collapse" href="#map" aria-expanded="false" aria-controls="collapseMap">Map</a>
+                    <a class="btn btn-default" role="button" data-toggle="collapse" href="#map" aria-expanded="false" aria-controls="collapseMap">
+                        <span class="fa fa-map"></span>
+                    </a>
                 </h3>
             </div>
             <div class="collapse in" id="contact">
@@ -155,6 +172,7 @@
                     Map
                 </div>
             </div>
+            <div class="space-mobile"></div>
         </div>
     </div>
 </div>

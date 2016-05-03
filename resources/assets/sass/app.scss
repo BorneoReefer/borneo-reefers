@@ -2,11 +2,6 @@
 $black: #000;
 $white: #fff;
 
-$nav-0: #006064;
-$nav-1: #0097A7;
-$nav-2: #00BCD4;
-$nav-3: #4DD0E1;
-
 $inset-default: -6px;
 $inset-hover: -10px;
 
@@ -30,21 +25,144 @@ $brand-danger: $white;
 
 $font-size-base: 16px;
 
-$page-header-border-color: $black;
+$border-radius-base: 0;
+
+$page-header-border-color: $brand-primary;
 
 $btn-default-color: $black;
-$btn-default-bg: rgba(255, 255, 255, 0.4);
+$btn-default-bg: $white;
 $btn-default-border: $black;
+
+$cyan900: #006064;
+$cyan800: #00838f;
+$cyan700: #0097a7;
+$cyan600: #00acc1;
+$cyan500: #00bcd4;
+$cyan400: #26c6da;
+$cyan300: #4dd0e1;
+$cyan200: #80deea;
+$cyan100: #b2ebf2;
+
+$green900: #1b5e20;
+$green800: #2e7d32;
+$green700: #388e3c;
+$green600: #43a047;
+$green500: #4caf50;
+$green400: #66bb6a;
+$green300: #81c784;
+$green200: #a5d6a7;
+$green100: #c8e6c9;
+
+$teal900: #004d40;
+$teal800: #00695c;
+$teal700: #00796b;
+$teal600: #00897b;
+$teal500: #009688;
+$teal400: #26a69a;
+$teal300: #4db6ac;
+$teal200: #80cbc4;
+$teal100: #b2dfdb;
+
+$blue900: #0d47a1;
+$blue800: #1565c0;
+$blue700: #1976d2;
+$blue600: #1e88e5;
+$blue500: #2196f3;
+$blue400: #42a5f5;
+$blue300: #64b5f6;
+$blue200: #90caf9;
+$blue100: #bbdefb;
+
+$orange900: #e65100;
+$orange800: #ef6c00;
+$orange700: #f57c00;
+$orange600: #fb8c00;
+$orange500: #ff9800;
+$orange400: #ffa726;
+$orange300: #ffb74d;
+$orange200: #ffcc80;
+$orange100: #ffe0b2;
+
+$brown900: #3e2723;
+$brown800: #4e342e;
+$brown700: #5d4037;
+$brown600: #6d4c41;
+$brown500: #795548;
+$brown400: #8d6e63;
+$brown300: #a1887f;
+$brown200: #bcaaa4;
+$brown100: #d7ccc8;
 
 // Import Twitter Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 // Import Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
+.cyan900 { background-color: $cyan900; }
+.cyan800 { background-color: $cyan800; }
+.cyan700 { background-color: $cyan700; }
+.cyan600 { background-color: $cyan600; }
+.cyan500 { background-color: $cyan500; }
+.cyan400 { background-color: $cyan400; }
+.cyan300 { background-color: $cyan300; }
+.cyan200 { background-color: $cyan200; }
+.cyan100 { background-color: $cyan100; }
+.green900 { background-color: $green900; }
+.green800 { background-color: $green800; }
+.green700 { background-color: $green700; }
+.green600 { background-color: $green600; }
+.green500 { background-color: $green500; }
+.green400 { background-color: $green400; }
+.green300 { background-color: $green300; }
+.green200 { background-color: $green200; }
+.green100 { background-color: $green100; }
+.teal900 { background-color: $teal900; }
+.teal800 { background-color: $teal800; }
+.teal700 { background-color: $teal700; }
+.teal600 { background-color: $teal600; }
+.teal500 { background-color: $teal500; }
+.teal400 { background-color: $teal400; }
+.teal300 { background-color: $teal300; }
+.teal200 { background-color: $teal200; }
+.teal100 { background-color: $teal100; }
+.blue900 { background-color: $blue900; }
+.blue800 { background-color: $blue800; }
+.blue700 { background-color: $blue700; }
+.blue600 { background-color: $blue600; }
+.blue500 { background-color: $blue500; }
+.blue400 { background-color: $blue400; }
+.blue300 { background-color: $blue300; }
+.blue200 { background-color: $blue200; }
+.blue100 { background-color: $blue100; }
+.orange900 { background-color: $orange900; }
+.orange800 { background-color: $orange800; }
+.orange700 { background-color: $orange700; }
+.orange600 { background-color: $orange600; }
+.orange500 { background-color: $orange500; }
+.orange400 { background-color: $orange400; }
+.orange300 { background-color: $orange300; }
+.orange200 { background-color: $orange200; }
+.orange100 { background-color: $orange100; }
+.brown900 { background-color: $brown900; }
+.brown800 { background-color: $brown800; }
+.brown700 { background-color: $brown700; }
+.brown600 { background-color: $brown600; }
+.brown500 { background-color: $brown500; }
+.brown400 { background-color: $brown400; }
+.brown300 { background-color: $brown300; }
+.brown200 { background-color: $brown200; }
+.brown100 { background-color: $brown100; }
+
+.text-white { color: $white; }
+
 body {
     background-color: #B2EBF2;
     font-family: 'Kanit', sans-serif;
     color: #212121;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .index {
@@ -96,35 +214,48 @@ body {
 }
 
 .navtext-0 {
-    box-shadow: inset 0 $inset-default 0 $nav-0;
+    box-shadow: inset 0 $inset-default 0 $cyan900;
     &:hover {
-        box-shadow: inset 0 $inset-hover 0 $nav-0;
+        box-shadow: inset 0 $inset-hover 0 $cyan900;
     }
 }
 
 .navtext-1 {
-    box-shadow: inset 0 $inset-default 0 $nav-1;
+    box-shadow: inset 0 $inset-default 0 $cyan700;
     &:hover {
-        box-shadow: inset 0 $inset-hover 0 $nav-1;
+        box-shadow: inset 0 $inset-hover 0 $cyan700;
     }
 }
 
 .navtext-2 {
-    box-shadow: inset 0 $inset-default 0 $nav-2;
+    box-shadow: inset 0 $inset-default 0 $cyan500;
     &:hover {
-        box-shadow: inset 0 $inset-hover 0 $nav-2;
+        box-shadow: inset 0 $inset-hover 0 $cyan500;
     }
 }
 
 .navtext-3 {
-    box-shadow: inset 0 $inset-default 0 $nav-3;
+    box-shadow: inset 0 $inset-default 0 $cyan300;
     &:hover {
-        box-shadow: inset 0 $inset-hover 0 $nav-3;
+        box-shadow: inset 0 $inset-hover 0 $cyan300;
     }
+}
+
+.space-mobile {
+    height: 10vh;
 }
 
 .row-page {
     @extend .row;
+}
+
+.well {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.page-header {
+    border-bottom: 1px solid $black;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -155,10 +286,10 @@ body {
         position: fixed;
         top: 50px;
         right: 0px;
-        width: 20vw;
+        width: 35vw;
         height: 100%;
         overflow: hidden;
-        padding: 20px 0px 80px 0px;
+        padding: 20px -27px 80px 0px;
         &-inner {
             overflow-y: scroll;
             height: 100%;
@@ -173,6 +304,22 @@ body {
     }
     .row-page {
         padding-bottom: 60vh;
+    }
+    .well {
+        border: 1px solid $black;
+        background-color: $white;
+    }
+    .page-header {
+        border-bottom: 4px solid $page-header-border-color;
+    }
+    .index-page {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: -5;
+        background-color: #546E7A;
+        height: 100vh;
+        width: 65vw;
     }
 }
 
@@ -198,15 +345,6 @@ body {
     }
 }
 
-.page-header {
-    border-bottom: 2px solid $page-header-border-color;
-}
-
-.well {
-    border: 1px solid $black;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
 .panel
 {
     color: $black;
@@ -216,9 +354,20 @@ body {
 }
 
 .carousel-inner .item {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .navbar-fixed-bottom {
     margin-top: 80px;
+}
+
+@media (max-width: $screen-xs-max) {
+#index-row {
+    &-xs { background-color: $white; }
+    &-0 { background-color: $white; }
+    &-1 { background-color: $blue300; }
+    &-2 { background-color: $orange400; }
+    &-3 { background-color: $green500; }
+    &-4 { background-color: $teal400; }
+}
 }
