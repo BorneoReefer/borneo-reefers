@@ -1,26 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="index-logo">
-        <div class="index-logo-inner panel-body">
-            <img class="col-xs-12" src="{{ asset('images/logo.png') }}" />
-            <div class="page-header hidden-xs text-white">
-                <h3>Discover</h3>
-            </div>
-            <div class="text-center hidden-xs">
-                <h3><a href="#main" class="btn btn-default">Borneo Reefer</a></h3>
-                <h3><a href="#services" class="btn btn-default">Our Services</a></h3>
-                <h3><a href="#values" class="btn btn-default">Our Values</a></h3>
-                <h3><a href="#mission" class="btn btn-default">Our Misson</a></h3>
-                <h3><a href="#history" class="btn btn-default">Our History</a></h3>
-                <h3><a href="#find" class="btn btn-default">Find Us</a></h3>
-            </div>
-        </div>
-    </div>
+<div class="container-fluid">
     <div class="index-page"></div>
     <div id="index-row-0" class="row-page">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
             <div class="page-header" id="main">
                 <h1>We're Borneo Reefer</h1>
             </div>
@@ -87,7 +71,7 @@
         </div>
     </div>
     <div id="index-row-1" class="row-page collapse">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
             <div class="page-header">
                 <div class="space-header" id="values"></div>
                 <h1>Our Values</h1>
@@ -107,7 +91,7 @@
         </div>
     </div>
     <div id="index-row-2" class="row-page collapse">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
             <div class="page-header">
                 <div class="space-header" id="mission"></div>
                 <h1>Our Mission</h1>
@@ -121,7 +105,7 @@
         </div>
     </div>
     <div id="index-row-3" class="row-page collapse">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
             <div class="page-header">
                 <div class="space-header" id="history"></div>
                 <h1>Our History</h1>
@@ -134,7 +118,7 @@
         </div>
     </div>
     <div id="index-row-4" class="row-page">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
             <div class="page-header">
                 <div class="space-header" id="find"></div>
                 <h1>Find Us</h1>
