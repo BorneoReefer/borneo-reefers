@@ -26,7 +26,12 @@
         <!--Index navigation bar-->
         @include('templates.navbar')
         <div class="content">
-            @yield('content')
+            <div class="index-page"></div>
+            <div class="container">
+                <div class="col-xs-12 col-sm-5">
+                    @yield('content')
+                </div>
+            </div>
         </div>
         <!--Default footer-->
         @include('templates.footer')
