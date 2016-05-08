@@ -27,13 +27,13 @@
         @include('templates.navbar')
         <div class="content">
             <div class="index-page">
-                <div class="index-nav">
-                    <div><a href="#">Text</a></div>
-                    <div><a href="#">Text</a></div>
-                    <div><a href="#">Text</a></div>
-                    <div><a href="#">Text</a></div>
-                    <div><a href="#">Text</a></div>
-                    <div><a href="#">Text</a></div>
+                <div class="index-nav cyan100">
+                    <div><a href="#">Text 1</a></div>
+                    <div><a href="#">Text 2</a></div>
+                    <div><a href="#">Text 3</a></div>
+                    <div><a href="#">Text 4</a></div>
+                    <div><a href="#">Text 5</a></div>
+                    <div><a href="#">Text 6</a></div>
                 </div>
             </div>
             <div class="container">

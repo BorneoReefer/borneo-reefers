@@ -10,7 +10,4 @@ if ($(window).width() > 768) {
             $('.index-logo').css('top', '0px')
         }
     )
-    $('#index-row-1').collapse()
-    $('#index-row-2').collapse()
-    $('#index-row-3').collapse()
 }
