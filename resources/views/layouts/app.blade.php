@@ -27,17 +27,12 @@
         @include('templates.navbar')
         <div class="content">
             <div class="index-page">
-                <div class="index-nav cyan100">
-                    <div><a href="#">Text 1</a></div>
-                    <div><a href="#">Text 2</a></div>
-                    <div><a href="#">Text 3</a></div>
-                    <div><a href="#">Text 4</a></div>
-                    <div><a href="#">Text 5</a></div>
-                    <div><a href="#">Text 6</a></div>
+                <div class="index-nav">
+                    @yield('menu')
                 </div>
             </div>
             <div class="container">
-                <div class="col-xs-12 col-sm-5">
+                <div class="col-xs-12 col-sm-6 content">
                     @yield('content')
                 </div>
             </div>
