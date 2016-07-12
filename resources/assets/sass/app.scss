@@ -242,14 +242,6 @@ body {
     }
 }
 
-.space-mobile {
-    height: 10vh;
-}
-
-.row-page {
-    @extend .row;
-}
-
 .well {
     border: none;
     background-color: rgba(0, 0, 0, 0);
@@ -303,9 +295,6 @@ body {
             height: 5vh;
         }
     }
-    .row-page {
-        padding-bottom: 60vh;
-    }
     .well {
         background-color: $white;
         & ul {
@@ -330,7 +319,9 @@ body {
         width: 65vw;
         background-color: rgba($brand-primary, 0.4);
     }
-    .text-white-desktop { color: $white; }
+    .text-white-desktop { 
+        color: $white;
+    }
 }
 
 @media (min-width: $screen-md-min) {
@@ -376,9 +367,6 @@ body {
         &-xs { background-color: $white; }
         &-0 { background-color: $white; }
         &-1 { background-color: $blue300; }
-        &-2 { background-color: $orange400; }
-        &-3 { background-color: $green500; }
-        &-4 { background-color: $teal400; }
     }
 }
 

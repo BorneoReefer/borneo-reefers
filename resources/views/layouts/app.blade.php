@@ -28,8 +28,6 @@
         <div class="content">
             @yield('content')
         </div>
-        <!--Default footer-->
-        @include('templates.footer')
     </div>
     <script src="{{ asset('js/app.js') }}" ></script>
     @yield('script_extra')
