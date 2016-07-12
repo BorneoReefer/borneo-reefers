@@ -1,7 +1,6 @@
 // Overrides & variables
 $black: #000;
 $white: #fff;
-$grey: #757575;
 
 $inset-default: -6px;
 $inset-hover: -10px;
@@ -14,11 +13,11 @@ $banner-sm: 200px;
 $banner-md: 225px;
 $banner-lg: 250px;
 
-
 $banner-index-sm: 50px;
 $banner-index-collapse: 5px;
 
-$brand-primary: #0D47A1;
+$brand-shadow: #445165;
+$brand-primary: #24A0CF;
 $brand-success: #FF3D00;
 $brand-info: #448AFF;
 $brand-warning: $white;
@@ -32,7 +31,6 @@ $page-header-border-color: $brand-primary;
 
 $btn-default-color: $black;
 $btn-default-bg: $white;
-$btn-default-border: $black;
 
 $cyan900: #006064;
 $cyan800: #00838f;
@@ -99,6 +97,8 @@ $brown100: #d7ccc8;
 // Import Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
+.brand { background-color: $brand-primary; }
+
 .cyan900 { background-color: $cyan900; }
 .cyan800 { background-color: $cyan800; }
 .cyan700 { background-color: $cyan700; }
@@ -162,8 +162,8 @@ body {
     color: #212121;
 }
 
-::-webkit-scrollbar {
-    display: none;
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .index {
@@ -190,13 +190,11 @@ body {
 .banner-filler {
     height: $banner-xs;
     background-size: cover;
-        z-index: 500;
 }
 
 .banner-index {
     @extend .banner-filler;
-    background-color: $white;
-    z-index: 40;
+    background-color: #455A64;
 }
 
 .navbar-toggle {
@@ -206,7 +204,7 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: $grey !important;
+    color: $black;
     text-transform: lowercase;
     font-size: 18px;
     font-family: Impact, Charcoal, sans-serif;
@@ -244,17 +242,13 @@ body {
     }
 }
 
-.space-mobile {
-    height: 10vh;
-}
-
 .well {
     border: none;
     background-color: rgba(0, 0, 0, 0);
 }
 
 .page-header {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $brand-shadow;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -281,6 +275,20 @@ body {
     .banner-index {
         height: $banner-index-sm;
     }
+    .index-logo {
+        position: fixed;
+        top: 50px;
+        right: 0px;
+        width: 35vw;
+        height: 100%;
+        overflow: hidden;
+        padding: 20px -27px 80px 0px;
+        &-inner {
+            overflow-y: scroll;
+            height: 100%;
+        }
+
+    }
     .space {
         height: 65vh;
         &-header {
@@ -288,46 +296,31 @@ body {
         }
     }
     .well {
-        border: 1px solid $black;
         background-color: $white;
+        & ul {
+            list-style-type: none;
+        }
+        & li:hover {
+            color: $brand-shadow;
+            font-size: 22px;
+            box-shadow: inset 0 -3px 0 $brand-shadow;
+        }
     }
     .page-header {
-        border-bottom: 4px solid $page-header-border-color;
+        color: $white;
+        border-bottom: 4px solid $brand-shadow;
     }
     .index-page {
         position: fixed;
         top: 0px;
         left: 0px;
-        background-color: $white;
+        z-index: -5;
         height: 100vh;
-        width: 60vw;
+        width: 65vw;
+        background-color: rgba($brand-primary, 0.4);
     }
-    .index-nav {
-        position: absolute;
-        left: 100%;
-        width: 100vh;
-        position: relative;
-        padding-top: 20px;
-        margin: -20px 0px 0px -42px;
-        transform-origin: 0% 100%;
-        transform: rotate(90deg);
-        & div {
-            position: relative;
-            margin-left: -10px;
-            color: $black;
-            display: inline-block;
-            text-align: left;
-            padding-left: 20px;
-            & a {
-                padding-left: 26px;
-                font-size: 14px;
-                color: $grey;
-                &:hover {
-                    font-size: 16px;
-                    color: $black;
-                }
-            }
-        }
+    .text-white-desktop { 
+        color: $white;
     }
 }
 
@@ -337,6 +330,10 @@ body {
     }
     .banner-index {
         height: $banner-index-collapse;
+    }
+    .index-logo {
+        top: 0px;
+        width: 15vw;
     }
 }
 
@@ -370,18 +367,20 @@ body {
         &-xs { background-color: $white; }
         &-0 { background-color: $white; }
         &-1 { background-color: $blue300; }
-        &-2 { background-color: $orange400; }
-        &-3 { background-color: $green500; }
-        &-4 { background-color: $teal400; }
     }
 }
 
-.item-list {
-    text-align: right;
-    list-style: none;
-    color: $grey;
-    & li:hover {
-        font-size: 22px;
-        color: $black;
+.btn {
+    border: none;
+    &-primary {
+        border: none;
+        box-shadow: inset 0 -3px 0 $brand-shadow;
+        &:hover {
+            box-shadow: inset 0 -5px 0 $brand-primary;
+        }
+    }
+    &-round {
+        @extend .btn-primary;
+        border-radius: 22px;
     }
 }

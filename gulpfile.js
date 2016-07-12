@@ -20,13 +20,13 @@ var paths = {
 elixir(function(mix) {
     mix.sass('app.scss');
     // Common JS
-    mix.scripts([
+    mix.babel([
         'app.js',
         paths.jquery + "dist/jquery.js",
         paths.bootstrap + 'javascripts/bootstrap.js'
     ], 'public/js/app.js');
 
-    mix.scripts(['index.js'], 'public/js/index.js');
+    mix.babel(['index.js'], 'public/js/index.js');
 
     mix.copy(paths.bootstrap + 'fonts/**', 'public/fonts');
     mix.copy(paths.fontawesome + 'fonts/**', 'public/fonts');

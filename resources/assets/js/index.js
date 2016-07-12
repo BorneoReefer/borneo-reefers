@@ -1,20 +1,37 @@
-if ($(window).width() > 768) {
-    $('div#myNavbar.collapse.navbar-collapse').hover(
-        function() {
-            $('.banner-index').css('height', '50px')
+"use strict";
 
-        },
-        function() {
-            $('.banner-index').css('height', '5px')
+(function(){
+    $(document).ready(() => {
+        // Handle navbar hover event
+        $('div#myNavbar.collapse.navbar-collapse').hover(
+            () => {
+                $('.banner-index').css('height', '50px')
+                $('.index-logo').css('top', '70px')
+
+            },
+            () => {
+                $('.banner-index').css('height', '5px')
+                $('.index-logo').css('top', '0px')
+            }
+        )
+
+        // Contextual items
+        const contextSmall = $('#context')
+        const contextView = $('#index-row-1 .content')
+
+        // Context switching function
+        const updateView = (context) => {
+            const template = $(`.templates .template-${context}`)
+            contextSmall.html(context)
+            contextView.html(template.html())
         }
-    )
-    $('#index-row-0').collapse()
-    $('.menu-item').hover(function(){
-        $('.collapse').removeClass('in')
-        $(`#index-row-${$(this).data('target')}`).addClass('in')
+
+        // Set context button functionality
+        $('.context-switch').click(function() { // Use function() to preserve 'this'
+            updateView($(this).data('context'))
+        })
+
+        // Set default context
+        updateView('services')
     })
-    $('#menu-history').click(function(){
-        $('.collapse').removeClass('in')
-        $(`#index-row-3`).addClass('in')
-    })
-}
+})()

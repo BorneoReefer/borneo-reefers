@@ -26,19 +26,8 @@
         <!--Index navigation bar-->
         @include('templates.navbar')
         <div class="content">
-            <div class="index-page">
-                <div class="index-nav">
-                    @yield('menu')
-                </div>
-            </div>
-            <div class="container">
-                <div class="col-xs-12 col-sm-6 content">
-                    @yield('content')
-                </div>
-            </div>
+            @yield('content')
         </div>
-        <!--Default footer-->
-        @include('templates.footer')
     </div>
     <script src="{{ asset('js/app.js') }}" ></script>
     @yield('script_extra')
