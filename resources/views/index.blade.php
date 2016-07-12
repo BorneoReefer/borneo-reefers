@@ -9,12 +9,12 @@
                 <h3>Discover</h3>
             </div>
             <div class="text-center hidden-xs">
-                <h3><a href="#main" class="btn btn-default">Borneo Reefer</a></h3>
-                <h3><a href="#services" class="btn btn-default">Our Services</a></h3>
-                <h3><a href="#values" class="btn btn-default">Our Values</a></h3>
-                <h3><a href="#mission" class="btn btn-default">Our Misson</a></h3>
-                <h3><a href="#history" class="btn btn-default">Our History</a></h3>
-                <h3><a href="#find" class="btn btn-default">Find Us</a></h3>
+                <h3><a href="#main" class="btn btn-primary">Borneo Reefer</a></h3>
+                <h3><a href="#services" class="btn btn-primary">Our Services</a></h3>
+                <h3><a href="#values" class="btn btn-primary">Our Values</a></h3>
+                <h3><a href="#mission" class="btn btn-primary">Our Misson</a></h3>
+                <h3><a href="#history" class="btn btn-primary">Our History</a></h3>
+                <h3><a href="#find" class="btn btn-primary">Find Us</a></h3>
             </div>
         </div>
     </div>
@@ -24,50 +24,45 @@
             <div class="page-header" id="main">
                 <h1>We're Borneo Reefer</h1>
             </div>
-            <div class="text-right">
+            <div class="text-right text-white-desktop">
                 <h3>A Container Refrigeration Company</h3>
                 <h3>Based in Kuching</h3>
                 <h3>
-                    <a class="btn btn-default hidden-xs" role="button" data-toggle="collapse" href="#services" aria-expanded="true" aria-controls="collapseServices">Our Services</a>
-                    <a class="btn btn-default hidden-xs" role="button" data-toggle="collapse" href="#service" aria-expanded="false" aria-controls="collapseService">Service List</a>
                     <div class="visible-xs">
-                        <a class="btn btn-default" href="#find"><span class="fa fa-phone"></span></a>
-                        <a class="btn btn-default" role="button" data-toggle="collapse" href="#index-row-1" aria-expanded="false" aria-controls="collapseValues">
+                        <a class="btn btn-round" href="#find"><span class="fa fa-phone"></span></a>
+                        <a class="btn btn-round" role="button" data-toggle="collapse" href="#index-row-1" aria-expanded="false" aria-controls="collapseValues">
                             <span class="fa fa-heart"></span>
                         </a>
-                        <a class="btn btn-default" role="button" data-toggle="collapse" href="#index-row-2" aria-expanded="false" aria-controls="collapseMission">
+                        <a class="btn btn-round" role="button" data-toggle="collapse" href="#index-row-2" aria-expanded="false" aria-controls="collapseMission">
                             <span class="fa fa-lightbulb-o"></span>
                         </a>
-                        <a class="btn btn-default" role="button" data-toggle="collapse" href="#index-row-3" aria-expanded="false" aria-controls="collapseHistory">
+                        <a class="btn btn-round" role="button" data-toggle="collapse" href="#index-row-3" aria-expanded="false" aria-controls="collapseHistory">
                             <span class="fa fa-history"></span>
                         </a>
                     </div>
                 </h3>
             </div>
-            <div class="collapse in" id="services">
-                <div class="well">
-                    <div id="carousel-services" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">Pre-Trip Inspection</div>
-                            <div class="item">Washing</div>
-                            <div class="item">Plugging & Unplugging (On Dock & On Board Vessel)</div>
-                            <div class="item">Pre-Sail Check On Board Vessel</div>
-                            <div class="item">Reefer Monitoring</div>
-                            <div class="item">Reefer Survey & Valuation</div>
-                            <div class="item">Data-Logger Readings & Analysis</div>
-                            <div class="item">Emergency Reefer Care Response (24 hour/365 Days)</div>
-                            <div class="item">Reefer Machinery Repair</div>
-                            <div class="item">Reefer Structural Repair</div>
-                            <div class="item">Sales of reconditioned Reefer units for cold storage</div>
-                            <div class="item">Sales & Maintenance of “Clip-On” & “Underslung” Generator Sets</div>
-                            <div class="item">Other Industrial Refrigeration Related Services</div>
-                        </div>
+            <div class="well hidden-xs">
+                <div id="carousel-services" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">Pre-Trip Inspection</div>
+                        <div class="item">Washing</div>
+                        <div class="item">Plugging & Unplugging (On Dock & On Board Vessel)</div>
+                        <div class="item">Pre-Sail Check On Board Vessel</div>
+                        <div class="item">Reefer Monitoring</div>
+                        <div class="item">Reefer Survey & Valuation</div>
+                        <div class="item">Data-Logger Readings & Analysis</div>
+                        <div class="item">Emergency Reefer Care Response (24 hour/365 Days)</div>
+                        <div class="item">Reefer Machinery Repair</div>
+                        <div class="item">Reefer Structural Repair</div>
+                        <div class="item">Sales of reconditioned Reefer units for cold storage</div>
+                        <div class="item">Sales & Maintenance of “Clip-On” & “Underslung” Generator Sets</div>
+                        <div class="item">Other Industrial Refrigeration Related Services</div>
                     </div>
                 </div>
             </div>
-            <div class="collapse" id="service">
-                <div class="well">
-                <ol>
+            <div class="well">
+                <ul>
                     <li data-target="#carousel-services" data-slide-to="0">Pre-Trip Inspection</li>
                     <li data-target="#carousel-services" data-slide-to="1">Washing</li>
                     <li data-target="#carousel-services" data-slide-to="2">Plugging & Unplugging (On Dock & On Board Vessel)</li>
@@ -81,8 +76,7 @@
                     <li data-target="#carousel-services" data-slide-to="10">Sales of reconditioned Reefer units for cold storage</li>
                     <li data-target="#carousel-services" data-slide-to="11">Sales & Maintenance of “Clip-On” & “Underslung” Generator Sets</li>
                     <li data-target="#carousel-services" data-slide-to="12">Other Industrial Refrigeration Related Services</li>
-                </ol>
-                </div>
+                </ul>
             </div>
         </div>
     </div>
