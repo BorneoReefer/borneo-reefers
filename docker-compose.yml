@@ -1,0 +1,29 @@
+version: "2"
+services:
+  app:
+    image: bitnami/node
+    volumes:
+      - ./:/app
+    command: "sh -c 'npm install -g -y gulp-cli && npm install && gulp --production'"
+  phpfpm:
+    image: bitnami/php-fpm
+    depends_on:
+      - app
+    volumes:
+      - ./docker/php-fpm:/bitnami/php-fpm/
+    volumes_from:
+      - app
+    expose:
+      - "9000"
+  nginx:
+    image: bitnami/nginx
+    depends_on:
+      - app
+    volumes:
+      - ./docker/vhost.conf:/bitnami/nginx/conf/vhosts/app.conf
+    volumes_from:
+      - app
+    links:
+      - phpfpm:phpfpm
+    ports:
+      - "80:80"

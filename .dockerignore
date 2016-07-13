@@ -11,5 +11,8 @@ public/js/
 *.sw*
 .on_cd
 .on_cd_lock
+.env
 *.sql
 Dockerfile
+docker-compose.yml
+vhost.conf
