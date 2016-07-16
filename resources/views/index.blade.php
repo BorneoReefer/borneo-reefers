@@ -87,7 +87,7 @@
 <div class="container">
     <div class="index-logo">
         <div class="index-logo-inner panel-body">
-            <img class="col-xs-12" src="{{ asset('images/logo.png') }}" />
+            <img class="col-xs-12" src="{{ secure_asset('images/logo.png') }}" />
             <div class="page-header hidden-xs text-white">
                 <h3>Discover</h3>
             </div>
@@ -159,5 +159,5 @@
 @stop
 
 @section('script_extra')
-    <script src="{{ asset('js/index.js') }}" ></script>
+    <script src="{{ secure_asset('js/index.js') }}" ></script>
 @stop
