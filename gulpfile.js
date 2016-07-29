@@ -1,5 +1,4 @@
-var elixir = require('laravel-elixir');
-require('laravel-elixir-livereload');
+const elixir = require('laravel-elixir')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,24 +10,30 @@ require('laravel-elixir-livereload');
  | file for our application, as well as publishing vendor resources.
  |
  */
-var paths = {
-	jquery: './node_modules/jquery/',
-    bootstrap: './node_modules/bootstrap-sass/assets/',
-    fontawesome: './node_modules/font-awesome/'
-};
+const paths = {
+  jquery: './node_modules/jquery/',
+  bootstrap: './node_modules/bootstrap-sass/assets/',
+  fontawesome: './node_modules/font-awesome/'
+}
 
-elixir(function(mix) {
-    mix.sass('app.scss');
-    // Common JS
-    mix.babel([
-        'app.js',
-        paths.jquery + "dist/jquery.js",
-        paths.bootstrap + 'javascripts/bootstrap.js'
-    ], 'public/js/app.js');
+elixir(function (mix) {
+  mix.sass('app.scss')
+  mix.version('css/app.css')
 
-    mix.babel(['index.js'], 'public/js/index.js');
+  // Common JS
+  mix.babel([
+    'app.js',
+    paths.jquery + 'dist/jquery.js',
+    paths.bootstrap + 'javascripts/bootstrap.js'
+  ], 'public/js/app.js')
 
-    mix.copy(paths.bootstrap + 'fonts/**', 'public/fonts');
-    mix.copy(paths.fontawesome + 'fonts/**', 'public/fonts');
-    mix.livereload();
-});
+  mix.babel(['index.js'], 'public/js/index.js')
+
+  mix.copy(paths.bootstrap + 'fonts/**', 'public/fonts')
+  mix.copy(paths.fontawesome + 'fonts/**', 'public/fonts')
+
+  // Live reload
+  mix.browserSync({
+    proxy: 'localhost:8000'
+  })
+})

@@ -24,20 +24,20 @@
     <div class="template-values">
         <div class="well text-left">
             <ul>
-                <li><h4>Team Work</h4></li>
-                <li><h4>Customer Focus</h4></li>
-                <li><h4>Quality & Professionalism</h4></li>
-                <li><h4>Open Communication</h4></li>
-                <li><h4>Continuous Improvement & Innovation</h4></li>
-                <li><h4>Ethical Business Practice</h4></li>
+                <li>Team Work</li>
+                <li>Customer Focus</li>
+                <li>Quality & Professionalism</li>
+                <li>Open Communication</li>
+                <li>Continuous Improvement & Innovation</li>
+                <li>Ethical Business Practice</li>
             </ul>
         </div>
     </div>
     <div class="template-mission">
         <div class="well text-left">
             <ul>
-                <li><h4>Providing clients and associates with the highest standard of service at all times.</h4></li>
-                <li><h4>Nurturing personnel though ample space for self-development through responsibility and job satisfaction.</h4></li>
+                <li>Providing clients and associates with the highest standard of service at all times.</li>
+                <li>Nurturing personnel though ample space for self-development through responsibility and job satisfaction.</li>
             </ul>
         </div>
     </div>
@@ -87,7 +87,7 @@
 <div class="container">
     <div class="index-logo">
         <div class="index-logo-inner panel-body">
-            <img class="col-xs-12" src="{{ secure_asset('images/logo.png') }}" />
+            <img class="col-xs-12" src="{{ asset('images/logo.png') }}" />
             <div class="page-header hidden-xs text-white">
                 <h3>Discover</h3>
             </div>
@@ -103,7 +103,7 @@
     <div class="index-page"></div>
     <div id="index-row-0" class="row">
         <div class="col-xs-12 col-sm-8">
-            <div class="page-header" id="main">
+            <div class="page-header hidden-xs" id="main">
                 <h1>We're Borneo Reefer</h1>
                 <h4 id="context"></h4>
             </div>
@@ -159,5 +159,5 @@
 @stop
 
 @section('script_extra')
-    <script src="{{ secure_asset('js/index.js') }}" ></script>
+    <script src="{{ asset('js/index.js') }}" ></script>
 @stop

@@ -2,6 +2,8 @@
 $black: #000;
 $white: #fff;
 
+$screen-md: 1025px;
+
 $inset-default: -6px;
 $inset-hover: -10px;
 
@@ -183,24 +185,55 @@ body {
     opacity: 100;
     box-shadow: 0 0 0 0;
     &:focus {
-        background-color: #00ACC1;
+        background-color: $cyan600;
     }
 }
 
-.banner-filler {
-    height: $banner-xs;
+.well {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.page-header {
+    border-bottom: 1px solid $brand-shadow;
+}
+
+.panel
+{
+    color: $black;
+    border: 0;
+    box-shadow: 2px 2px 2px #A1A1A1;
     background-size: cover;
 }
 
-.banner-index {
-    @extend .banner-filler;
-    background-color: #455A64;
+.carousel-inner .item {
+    font-size: 20px;
 }
 
+.navbar-fixed-bottom {
+    margin-top: 80px;
+}
+
+.btn {
+    border: none;
+    &-primary {
+        border: none;
+        box-shadow: inset 0 -3px 0 $brand-shadow;
+        &:hover {
+            box-shadow: inset 0 -5px 0 $brand-primary;
+        }
+    }
+    &-round {
+        @extend .btn-primary;
+        border-radius: 22px;
+    }
+}
 .navbar-toggle {
     border: 0;
     z-index: 10;
-    background-color: $white;
+    border-radius: 22px;
+    color: $white;
+    background-color: $brand-primary !important;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -214,43 +247,31 @@ body {
     }
 }
 
-.navtext-0 {
-    box-shadow: inset 0 $inset-default 0 $cyan900;
-    &:hover {
-        box-shadow: inset 0 $inset-hover 0 $cyan900;
+// Defaults
+.banner-filler {
+    height: $banner-xs;
+    background-size: cover;
+}
+
+.banner-index {
+    @extend .banner-filler;
+    background-color: #455A64;
+}
+
+// Mobile
+@media (max-width: $screen-xs-max) {
+    #index-row {
+        &-xs { background-color: $white; }
+        &-0 { background-color: $white; }
+        &-1 { background-color: $blue300; }
+    }
+    .collapse {
+        background-color: $cyan300;
+         a { color: $gray-dark !important; }
     }
 }
 
-.navtext-1 {
-    box-shadow: inset 0 $inset-default 0 $cyan700;
-    &:hover {
-        box-shadow: inset 0 $inset-hover 0 $cyan700;
-    }
-}
-
-.navtext-2 {
-    box-shadow: inset 0 $inset-default 0 $cyan500;
-    &:hover {
-        box-shadow: inset 0 $inset-hover 0 $cyan500;
-    }
-}
-
-.navtext-3 {
-    box-shadow: inset 0 $inset-default 0 $cyan300;
-    &:hover {
-        box-shadow: inset 0 $inset-hover 0 $cyan300;
-    }
-}
-
-.well {
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.page-header {
-    border-bottom: 1px solid $brand-shadow;
-}
-
+// Tablets & above
 @media (min-width: $screen-sm-min) {
     .navbar-default .navbar-nav > li > a {
         color: $white;
@@ -346,41 +367,31 @@ body {
     }
 }
 
-.panel
-{
-    color: $black;
-    border: 0;
-    box-shadow: 2px 2px 2px #A1A1A1;
-    background-size: cover;
-}
-
-.carousel-inner .item {
-    font-size: 20px;
-}
-
-.navbar-fixed-bottom {
-    margin-top: 80px;
-}
-
-@media (max-width: $screen-xs-max) {
-    #index-row {
-        &-xs { background-color: $white; }
-        &-0 { background-color: $white; }
-        &-1 { background-color: $blue300; }
+// Specific
+.navtext-0 {
+    box-shadow: inset 0 $inset-default 0 $cyan900;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $cyan900;
     }
 }
 
-.btn {
-    border: none;
-    &-primary {
-        border: none;
-        box-shadow: inset 0 -3px 0 $brand-shadow;
-        &:hover {
-            box-shadow: inset 0 -5px 0 $brand-primary;
-        }
+.navtext-1 {
+    box-shadow: inset 0 $inset-default 0 $cyan700;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $cyan700;
     }
-    &-round {
-        @extend .btn-primary;
-        border-radius: 22px;
+}
+
+.navtext-2 {
+    box-shadow: inset 0 $inset-default 0 $cyan500;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $cyan500;
+    }
+}
+
+.navtext-3 {
+    box-shadow: inset 0 $inset-default 0 $cyan300;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $cyan300;
     }
 }
