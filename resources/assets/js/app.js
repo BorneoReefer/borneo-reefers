@@ -1,3 +1,5 @@
-(function(){
-    console.log("Lol");
-})();
+'use strict'
+
+;(function () {
+  console.log('No defaults to load')
+})()
