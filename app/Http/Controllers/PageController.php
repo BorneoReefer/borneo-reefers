@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\News;
+use App\Models\FAQ;
 
 class PageController extends Controller
 {
@@ -32,6 +33,8 @@ class PageController extends Controller
 
     public function faq()
     {
-        return view('faq');
+        return view('faq', [
+            'faq' => FAQ::all()
+        ]);
     }
 }

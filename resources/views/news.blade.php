@@ -19,6 +19,12 @@
     </div>
     <div class="row">
         <div class="col-md-offset-2 col-md-8">
+            @if (! count($news))
+                <div class="well">
+                    <span class="fa fa-smile-o fa-lg"></span>
+                    <span class="pull-right">There is nothing to show here</span>
+                </div>
+            @endif
             @foreach($news as $news_instance)
                 <div class="read panel panel-primary" data-url="{{ route('api::news.show', $news_instance['id'] ) }}">
                     <div class="panel-heading">
