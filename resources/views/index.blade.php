@@ -49,38 +49,18 @@
         </div>
     </div>
     <div class="template-contact">
-        <div class="text-right">
-            <h3>
-                <a class="btn btn-default" role="button" data-toggle="collapse" href=".toggle-contact" aria-expanded="true" aria-controls="collapseContact">Contact</a>
-                <a class="btn btn-default" role="button" data-toggle="collapse" href=".toggle-address" aria-expanded="false" aria-controls="collapseAddress">Address</a>
-                <a class="btn btn-default" role="button" data-toggle="collapse" href=".toggle-map" aria-expanded="false" aria-controls="collapseMap">
-                    <span class="fa fa-map"></span>
-                </a>
-            </h3>
-        </div>
-        <div class="collapse in toggle-contact">
-            <div class="well">
-                <address>
-                    <abbr title="Mobile">Mobile:</abbr> +60 123456789<br/>
-                    <abbr title="Phone">Phone:</abbr> +60 82222<br/>
-                    <abbr title="Email">Email:</abbr> reefer@example.com<br/>
-                </address>
-            </div>
-        </div>
-        <div class="collapse toggle-address">
-            <div class="well">
-                <address>
-                    <strong>Borneo Reefer</strong><br>
-                    1st floor, Lot 1905, Section 66, KTLD,<br>
-                    Jalan Pending,<br>
-                    93450 Kuching, Sarawak<br>
-                </address>
-            </div>
-        </div>
-        <div class="collapse toggle-map">
-            <div class="well">
-                Map
-            </div>
+        <div class="well">
+            <address>
+                <abbr title="Mobile">Mobile:</abbr> +60 123456789<br/>
+                <abbr title="Phone">Phone:</abbr> +60 82222<br/>
+                <abbr title="Email">Email:</abbr> reefer@example.com<br/>
+            </address>
+            <address>
+                <strong>Borneo Reefer</strong><br>
+                1st floor, Lot 1905, Section 66, KTLD,<br>
+                Jalan Pending,<br>
+                93450 Kuching, Sarawak<br>
+            </address>
         </div>
     </div>
 </div>
