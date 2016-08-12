@@ -168,39 +168,63 @@ Route::group([
 |
 */
 Route::group([
+    'middleware' => ['web'],
+    'as' => 'api::',
+    'prefix' => 'api',
+    'namespace' => 'API',
+], function () {
+    Route::resource('news', 'NewsController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'news.index',
+            'show' => 'news.show',
+        ]
+    ]);
+
+    Route::resource('data', 'DataController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'data.index',
+            'show' => 'data.show',
+        ]
+    ]);
+
+    Route::resource('faq', 'FAQController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'faq.index',
+            'show' => 'faq.show',
+        ]
+    ]);
+});
+Route::group([
     'middleware' => ['web', 'auth'],
     'as' => 'api::',
     'prefix' => 'api',
     'namespace' => 'API',
 ], function () {
     Route::resource('news', 'NewsController', [
-        'only' => ['index', 'store', 'show', 'update', 'destroy'],
+        'only' => ['store', 'update', 'destroy'],
         'names' => [
-            'index' => 'news.index',
             'store' => 'news.store',
-            'show' => 'news.show',
             'update' => 'news.update',
             'destroy' => 'news.destroy'
         ]
     ]);
 
     Route::resource('data', 'DataController', [
-        'only' => ['index', 'store', 'show', 'update', 'destroy'],
+        'only' => ['store', 'update', 'destroy'],
         'names' => [
-            'index' => 'data.index',
             'store' => 'data.store',
-            'show' => 'data.show',
             'update' => 'data.update',
             'destroy' => 'data.destroy'
         ]
     ]);
 
     Route::resource('faq', 'FAQController', [
-        'only' => ['index', 'store', 'show', 'update', 'destroy'],
+        'only' => ['store', 'update', 'destroy'],
         'names' => [
-            'index' => 'faq.index',
             'store' => 'faq.store',
-            'show' => 'faq.show',
             'update' => 'faq.update',
             'destroy' => 'faq.destroy'
         ]
