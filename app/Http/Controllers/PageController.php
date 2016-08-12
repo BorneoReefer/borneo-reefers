@@ -38,10 +38,17 @@ class PageController extends Controller
         return view('about');
     }
 
-    public function faq()
+    public function faq($id = null)
     {
-        return view('faq', [
+        $data = [
             'faq' => FAQ::all()
-        ]);
+        ];
+
+        if (isset($id))
+        {
+            $data['article'] = FAQ::findOrFail($id);
+        }
+
+        return view('faq', $data);
     }
 }

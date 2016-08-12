@@ -39,7 +39,7 @@
                     </div>
                     <input type="text" class="form-control" placeholder="Title"/>
                     <textarea class="form-control"></textarea>
-                    <button id="submit" class="btn btn-primary btn-block" data-method="POST" data-url="{{ route('api::news.store') }}">Submit</button>
+                    <button id="submit" class="form-submit btn btn-primary btn-block" data-method="POST" data-url="{{ route('api::news.store') }}">Submit</button>
                 </div>
                 @endif
             @endif

@@ -76,10 +76,10 @@ Route::group([
         'as' => 'about',
         'uses' => 'PageController@about'
     ]);
-    Route::get('/faq', [
+    Route::get('/faq/{id?}', [
         'as' => 'faq',
         'uses' => 'PageController@faq'
-    ]);
+    ])->where('id', '[0-9]+');
 });
 
 /*
