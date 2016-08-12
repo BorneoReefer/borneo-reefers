@@ -28,6 +28,7 @@ elixir(function (mix) {
   ], 'public/js/app.js')
 
   mix.babel(['index.js'], 'public/js/index.js')
+  mix.babel(['news.js'], 'public/js/news.js')
 
   mix.copy(paths.bootstrap + 'fonts/**', 'public/fonts')
   mix.copy(paths.fontawesome + 'fonts/**', 'public/fonts')

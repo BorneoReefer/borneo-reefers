@@ -159,7 +159,7 @@ $brown100: #d7ccc8;
 .text-white { color: $white; }
 
 body {
-    background-color: #B2EBF2;
+    background-color: lighten($cyan100, 15%);
     font-family: 'Kanit', sans-serif;
     color: #212121;
 }
