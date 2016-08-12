@@ -19,11 +19,18 @@ class PageController extends Controller
         ]);
     }
 
-    public function news()
+    public function news($id = null)
     {
-        return view('news', [
+        $data = [
             'news' => News::orderBy('created_at', 'des')->paginate(4)
-        ]);
+        ];
+
+        if (isset($id))
+        {
+            $data['article'] = News::findOrFail($id);
+        }
+
+        return view('news', $data);
     }
 
     public function about()

@@ -68,10 +68,10 @@ Route::group([
         'as' => 'index',
         'uses' => 'PageController@index'
     ]);
-    Route::get('/news', [
+    Route::get('/news/{id?}', [
         'as' => 'news',
         'uses' => 'PageController@news'
-    ]);
+    ])->where('id', '[0-9]+');
     Route::get('/about', [
         'as' => 'about',
         'uses' => 'PageController@about'
@@ -81,69 +81,6 @@ Route::group([
         'uses' => 'PageController@faq'
     ]);
 });
-
-/*
-|--------------------------------------------------------------------------
-| Management Routes
-|--------------------------------------------------------------------------
-|
-| GET|HEAD  | management/news         | admin::news.index  | App\Http\Controllers\Management\NewsController@index            | web,auth   |
-| GET|HEAD  | management/news/create  | admin::news.create | App\Http\Controllers\Management\NewsController@create           | web,auth   |
-| GET|HEAD  | management/news/edit    | admin::news.edit   | App\Http\Controllers\Management\NewsController@edit             | web,auth   |
-| GET|HEAD  | management/data         | admin::data.index  | App\Http\Controllers\Management\DataController@index            | web,auth   |
-| GET|HEAD  | management/data/create  | admin::data.create | App\Http\Controllers\Management\DataController@create           | web,auth   |
-| GET|HEAD  | management/data/edit    | admin::data.edit   | App\Http\Controllers\Management\DataController@edit             | web,auth   |
-| GET|HEAD  | management/faq          | admin::faq.index   | App\Http\Controllers\Management\FAQController@index             | web,auth   |
-| GET|HEAD  | management/faq/create   | admin::faq.create  | App\Http\Controllers\Management\FAQController@create            | web,auth   |
-| GET|HEAD  | management/faq/edit     | admin::faq.edit    | App\Http\Controllers\Management\FAQController@edit              | web,auth   |
-|
-*/
-Route::group([
-    'middleware' => ['web', 'auth'],
-    'as' => 'admin::',
-    'prefix' => 'management',
-    'namespace' => 'Management',
-], function () {
-    Route::get('/news', [
-        'as' => 'news.index',
-        'uses' => 'NewsController@index'
-    ]);
-    Route::get('/news/create', [
-        'as' => 'news.create',
-        'uses' => 'NewsController@create'
-    ]);
-    Route::get('/news/edit', [
-        'as' => 'news.edit',
-        'uses' => 'NewsController@edit'
-    ]);
-
-    Route::get('/data', [
-        'as' => 'data.index',
-        'uses' => 'DataController@index'
-    ]);
-    Route::get('/data/create', [
-        'as' => 'data.create',
-        'uses' => 'DataController@create'
-    ]);
-    Route::get('/data/edit', [
-        'as' => 'data.edit',
-        'uses' => 'DataController@edit'
-    ]);
-
-    Route::get('/faq', [
-        'as' => 'faq.index',
-        'uses' => 'FAQController@index'
-    ]);
-    Route::get('/faq/create', [
-        'as' => 'faq.create',
-        'uses' => 'FAQController@create'
-    ]);
-    Route::get('/faq/edit', [
-        'as' => 'faq.edit',
-        'uses' => 'FAQController@edit'
-    ]);
-});
-
 
 /*
 |--------------------------------------------------------------------------
